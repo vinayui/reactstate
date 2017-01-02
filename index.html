@@ -1,0 +1,235 @@
+<html>
+    <head>
+        
+        <script src="js/react.js"></script>
+        <script src="js/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="rec.jsx.js"></script>
+    </head>
+        <body>
+            <div id="app"></div>
+
+
+
+
+            </body>
+
+            <script type="text/babel">
+                var Navbar= React.createClass({
+                    propTypes:{
+                      brand:React.PropTypes.string
+                    },
+                    getDefaultProps:function(){
+                        return {
+                            brand:"MY first React web aplication"
+                        }
+                    },
+
+                render:function(){
+                        if(this.props.color=='dark'){
+                            var navClass='navbar navbar-inverse';
+                        }else {
+                            var navClass='navbar navar-default';
+                        }
+                        var homeActive ='';
+                        var aboutActive ='';
+                        if (this.props.page=='home'){
+                            homeActive='active'
+
+                        } else if (this.props.page=='about'){
+                            aboutActive='active'
+                    }
+                return (
+                <div>
+                <nav className={navClass}>
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span className="sr-only">Toggle navigation</span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                        <a className="navbar-brand" href="#">{this.props.brand}</a>
+                    </div>
+                    <div id="navbar" className="navbar-collapse collapse">
+                        <ul className="nav navbar-nav">
+                            <li className={homeActive}><a onClick={this.props.homeClick}href="#">Home</a></li>
+                            <li className={aboutActive}><a onClick={this.props.aboutClick} href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li className="dropdown">
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+                                <ul className="dropdown-menu">
+
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+                </div>
+                  );
+  }
+});
+                var Jumbotron= React.createClass({
+                    PropTypes:{
+                      heading:React.PropTypes.string,
+                        text:React.PropTypes.string,
+                        link:React.PropTypes.string
+
+                    },
+                    getDefaultProps:function (){
+                      return {
+                          heading :'welcome',
+                          text:"welcome to react the first web application",
+                          link:"https:faceook.com"
+                      }
+                    },
+                    render:function(){
+                        return(
+                                <div>
+                                    <div className="jumbotron">
+                                        <div className="container">
+                                            <h1>{this.props.heading}</h1>
+                                            <p>{this.props.text}</p>
+                                            <p><a className="btn btn-primary btn-lg" href="#" role="button">{this.props.link} &raquo;</a></p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                        );
+                    }
+                });
+                var PageAbout= React.createClass({
+                    render:function(){
+                        return(
+                                <div>
+                                    <div className="container">
+
+                                        <div className="row">
+                                            <div className="col-md-4">
+                                                <h2>Heading</h2>
+                                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                                                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <h2>Heading</h2>
+                                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                                                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                            </div>
+
+                                        </div>
+                                        <div className="col-md-4">
+                                            <h2>Heading</h2>
+                                            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                                            <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        );
+                    }
+                });
+
+                var PageHome= React.createClass({
+                    render:function(){
+                        return(
+                                <div>
+                                    <div className="container">
+
+                                        <div className="row">
+                                            <div className="col-md-4">
+                                                <h2>Heading</h2>
+                                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                                                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <h2>Heading</h2>
+                                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                                                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <h2>Heading</h2>
+                                                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                                                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                        );
+                    }
+                });
+                var Footer= React.createClass({
+                    getDefaultProps:function() {
+                        return {
+                      website:"My web site",
+                      copy_year:2016
+                        }
+                    },
+                    render:function(){
+                        return(
+                                <div>
+                                    <hr />
+
+                                    <footer>
+                                        <p>{this.props.copy_year} {this.props.website}.</p>
+                                    </footer>
+                                </div>
+                        );
+                    }
+                });
+
+                var App= React.createClass({
+                    getInitialState:function (){
+                      return {
+                          page:'home'
+                      }
+                    },
+                    handleHomeClick:function (){
+                      this.setState({
+                          page:'home'
+                      })
+                    },
+                    handleAboutClick:function(){
+                        this.setState({
+                            page:'about'
+                        })
+
+                    },
+                    render:function(){
+
+                        if(this.state.page =='home'){
+                            var jumbotron=<Jumbotron />
+                            var page=<PageHome />
+                        }else if(this.state.page=='about'){
+                            var jumbotron ='';
+                            var page=<PageAbout />
+
+                        }
+                        return(
+                            <div>
+                            <Navbar
+                                    color="dark"
+                                    page={this.state.page}
+                                    homeClick={this.handleHomeClick}
+                                    aboutClick={this.handleAboutClick}
+                            />
+                                {jumbotron}
+                                {page}
+                            <Footer/>
+                            </div>
+                        );
+                    }
+                });
+
+ReactDOM.render(<App/>,document.getElementById('app'));
+
+            </script>
+
+</html>
